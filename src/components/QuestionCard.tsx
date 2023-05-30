@@ -27,7 +27,7 @@ const QuestionCard: React.FC<Props> = ({
       <P dangerouslySetInnerHTML={{ __html: question }}></P>
       <div>
         {answers.map((answer, index) => (
-          <ButtonWrap
+          <ButtonWrapper
             correct={userAnswer?.correctAnswer === answer}
             userClicked={userAnswer?.answer === answer}
             key={index}
@@ -35,7 +35,7 @@ const QuestionCard: React.FC<Props> = ({
             <button disabled={!!userAnswer} value={answer} onClick={callback}>
               <span dangerouslySetInnerHTML={{ __html: answer }}></span>
             </button>
-          </ButtonWrap>
+          </ButtonWrapper>
         ))}
       </div>
     </Wrapper>
@@ -61,7 +61,7 @@ type ButtonWrapperProps = {
   userClicked: boolean;
 };
 
-const ButtonWrap = styled.div<ButtonWrapperProps>`
+const ButtonWrapper = styled.div<ButtonWrapperProps>`
   transition: all 0.3s ease;
   :hover {
     opacity: 0.8;
